@@ -236,4 +236,16 @@ app.get("/api/auth/me", protect, async (req, res) => {
       id: req.user._id,
       name: req.user.name,
       email: req.user.email,
-   
+    },
+  });
+});
+
+// =======================
+// Start Server
+// =======================
+
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+});    
